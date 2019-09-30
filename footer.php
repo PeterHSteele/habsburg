@@ -45,9 +45,9 @@
 			</nav>
 
 			<?php endforeach; ?>
-		</div> 
 		
-		<div class="footer-flex-container">
+		
+		
 			<?php dynamic_sidebar( 'footer_widgets' ); ?>
 		</div>
 		

@@ -1256,14 +1256,14 @@ Layout
 .footer-flex-container{
 	display: flex;
 	flex-flow: row wrap;
-	justify-content: space-around;
+	justify-content: flex-start;
 	margin: 0 0 1.5em 1.5em;
 }
 
 .footer-flex-container > nav,
 .footer-flex-container > div,
 .footer-flex-container > section{
-	flex: 0 0 25%;
+	flex: 0 0 50%;
 }
 
 /*---------------------------
@@ -1380,6 +1380,8 @@ Media Queries
 ---------------------------*/
 
 
+
+
 @media all and (min-width: 800px){
 
 	.site-branding{
@@ -1401,6 +1403,11 @@ Media Queries
 		display:block;
 	}
 
+	.footer-flex-container > nav,
+	.footer-flex-container > div,
+	.footer-flex-container > section{
+		flex: 0 0 25%;
+	}
 
 }
 
