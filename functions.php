@@ -7,7 +7,7 @@
  * @package habsburg
  */
 
-if ( ! function_exists( '_s_setup' ) ) :
+if ( ! function_exists( 'habsburg_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -15,7 +15,7 @@ if ( ! function_exists( '_s_setup' ) ) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function _s_setup() {
+	function habsburg_setup() {
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
@@ -84,7 +84,7 @@ if ( ! function_exists( '_s_setup' ) ) :
 		) );
 	}
 endif;
-add_action( 'after_setup_theme', '_s_setup' );
+add_action( 'after_setup_theme', 'habsburg_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -93,20 +93,20 @@ add_action( 'after_setup_theme', '_s_setup' );
  *
  * @global int $content_width
  */
-function _s_content_width() {
+function habsburg_content_width() {
 	// This variable is intended to be overruled from themes.
 	// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
 	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
 	$GLOBALS['content_width'] = apply_filters( '_s_content_width', 640 );
 }
-add_action( 'after_setup_theme', '_s_content_width', 0 );
+add_action( 'after_setup_theme', 'habsburg_content_width', 0 );
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function _s_widgets_init() {
+function habsburg_widgets_init() {
 
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar', '_s' ),
@@ -114,8 +114,8 @@ function _s_widgets_init() {
 		'description'   => esc_html__( 'Add widgets here.', '_s' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
 	) );
 
 	register_sidebar(array(
@@ -129,13 +129,13 @@ function _s_widgets_init() {
 	);
 
 }
-add_action( 'widgets_init', '_s_widgets_init' );
+add_action( 'widgets_init', 'habsburg_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
-function _s_scripts() {
-	wp_enqueue_style( '_s-style', get_stylesheet_uri() );
+function habsburg_scripts() {
+	wp_enqueue_style( 'habsburg-style', get_stylesheet_uri() );
 
 	/* enqueue stylesheets for various layouts */
 
@@ -147,16 +147,16 @@ function _s_scripts() {
 		wp_enqueue_style( 'habsburg-sidebar-right-style', get_template_directory_uri() . '/layouts/content-sidebar.css' );
 	}
 
-	wp_enqueue_script( '_s-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_script( 'habsburg-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 	/*wp_enqueue_script( '_s-navigation-two', get_template_directory_uri() . '/js/navigation-two.js', array('jquery'), '20151215', true );*/
 
-	wp_enqueue_script( '_s-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script( 'habsburg-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', '_s_scripts' );
+add_action( 'wp_enqueue_scripts', 'habsburg_scripts' );
 
 /**
  * Font Awesome Kit Setup

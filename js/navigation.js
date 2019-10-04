@@ -63,18 +63,10 @@ jQuery(document).ready( function($) {
 	
 	//remove .toggle from menu on resize window
 	window.onresize = function(){
-		
-		if ( -1 !== menu.attr('class').indexOf( 'open' ) ) {
-			
-			//container.className = container.className.replace( ' toggled', '' );
-			button.setAttribute( 'aria-expanded', 'false' );
-			menu.attr( 'aria-expanded', 'false' );
-			
-				
-			menu.removeClass('open')
-			menu.attr('style','')
-			
-		}
+		button.setAttribute( 'aria-expanded', 'false' );
+		menu.attr( 'aria-expanded', 'false' );
+		menu.removeClass('open')
+		menu.attr('style','')	
 	}
 
 	/*=========
@@ -92,7 +84,6 @@ jQuery(document).ready( function($) {
 
 	search_fields =  $('.nav-search-field');
 
-	console.log('se', search_expands);
 	search_expands.attr( 'aria-pressed', 'false' );
 	search_expands.click( function( event ){
 		toggle( $(this).parent(), event.target, $(this).parent().children( 'input' ), 'aria-pressed');

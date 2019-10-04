@@ -24,7 +24,7 @@
 				<?php
 				_habsburg_posted_by( ' | ' );
 				_habsburg_posted_in( ' | ' );
-				habsburg_posted_on();
+				_habsburg_posted_on();
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>

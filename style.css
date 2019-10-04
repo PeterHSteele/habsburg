@@ -460,6 +460,7 @@ big {
 --------------------------------------------------------------*/
 html {
 	box-sizing: border-box;
+	height:100%;
 }
 
 *,
@@ -470,6 +471,7 @@ html {
 }
 
 body {
+	height:100%;
 	background: #fff;
 	/* Fallback for when there is no custom background color defined. */
 	font-size: 16px;
@@ -669,13 +671,6 @@ div.control > button[type="submit"]:hover {
 a {
 	color: black;
 	text-decoration: none;
-}
-
-.site-header a,
-.site-header a:hover,
-.site-footer a,
-.site-footer a:hover{
-	color: white;
 }
 
 a:visited {
@@ -1213,7 +1208,8 @@ object {
 Layout
 ----------------------------*/
 
-.page{
+#page{
+	height: 100%;
 	display:flex;
 	justify-content:space-between;
 	flex-direction: column;
@@ -1280,6 +1276,11 @@ Header
 	display:none;
 }
 
+.site-header a,
+.site-header a:hover{
+	color: white;
+}
+
 .site-branding > p, 
 .site-branding > h1{
 	text-align: center;
@@ -1288,6 +1289,11 @@ Header
 
 .site-branding > p a,
 .site-branding > h1 a{
+	color: black;
+}
+
+.site-branding > p a:hover,
+.site-branding > h1 a:hover{
 	color: black;
 }
 
@@ -1333,12 +1339,26 @@ Main Content
 	text-decoration: underline;
 }
 
+/*post content*/
+
+.entry-content a{
+	color: royalblue;
+}
+
+.entry-content a:hover{
+	text-decoration: underline;
+}
+
 /*---------------------------
 Sidebar
 ----------------------------*/
 
 aside{
 	padding-top: 2em;
+}
+
+aside .widget ul ul{
+	list-style: none;/*tricksy authors widget, stop sticking out into my content */
 }
 
 /*---------------------------
@@ -1361,7 +1381,10 @@ Footer
 	list-style: none;
 }
 
-
+.site-footer a,
+.site-footer a:hover{
+	color: white;
+}
 
 .jetpack-social-widget-item svg{
 	fill: white;
