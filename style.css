@@ -1317,6 +1317,7 @@ Main Content
 }
 
 .site-main > article,
+.site-main > .post-navigation 
 .site-main > .posts-navigation {
 	margin: 0 2% 6em 4%;
 }
@@ -1335,6 +1336,7 @@ Main Content
 	padding: .5em 0;
 }
 
+.post-navigation a,
 .posts-navigation a{
 	text-decoration: underline;
 }
@@ -1437,6 +1439,7 @@ Media Queries
 @media all and (min-width: 940px){
 	.site-main > article,
 	.site-main > .posts-navigation,
+	.site-main > .post-navigation,
 	.site-main > .page-header{
 		margin-left: 20%;
 		margin-right: 10%;
