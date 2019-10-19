@@ -1225,7 +1225,7 @@ Layout
 }
 
 .site-content .widget-area{
-	display:none;
+	width: 100%;
 }
 
 /* no-sidebar layout*/
@@ -1356,7 +1356,7 @@ Sidebar
 ----------------------------*/
 
 aside{
-	padding-top: 2em;
+	padding: 2em .5em 0;
 }
 
 aside .widget ul ul{
@@ -1426,6 +1426,8 @@ Media Queries
 		float:right;
 		width:25%;
 		display:block;
+		padding: 0;
+		padding-top:2em;
 	}
 
 	.footer-flex-container > nav,
