@@ -1310,6 +1310,88 @@ Header
 Main Content
 ----------------------------*/
 
+/*---------------------------
+Front Page
+----------------------------*/
+
+.habsburg-card-container{
+	padding: 1em 0;
+	display: flex;
+	align-items:stretch;
+	justify-content: center;
+}
+
+.habsburg-card{
+	margin: 0 1.5%;
+	flex: 0 0 30%;
+	position:relative;
+	border-bottom: 2px solid white
+}
+
+.habsburg-card:hover{
+	border-bottom: 2px solid royalblue;
+}
+
+.habsburg-card img{
+	max-height: 200px;
+	object-fit: cover;
+}
+/*
+.habsburg-card-body{
+	background-size: cover;
+	background-repeat: no-repeat;
+	position:relative;
+	height:200px;	
+	overflow-y:hidden;
+}
+*/
+.habsburg-teaser{
+	width: 100%;
+}
+/*
+.habsburg-teaser{
+	padding: .5em;
+	transition: .3s top;
+	position:absolute;
+	left:0;
+	top: 100%;
+	background:rgba(0,0,0,.7);
+	color:white;
+	width: 100%;
+	min-height: 100%;
+	/*max-height: 0;
+}
+
+
+.habsburg-card-body:hover .habsburg-teaser{
+	top: 0;
+}
+*/
+/*
+.habsburg-card{
+	transition: .3s;
+	padding: 1em;
+	
+	margin: 0 1.5%;
+	border-radius: 10px;
+	background:rgb(245,250,245);
+	box-shadow:inset 2px 2px 4px 0px rgb( 200, 200, 200),
+	2px 2px 3px 0px rgb( 200, 200, 200),
+	inset 2px 2px 7px 0px rgb( 240, 240, 240),
+	inset -2px -2px 3px 0px rgb( 240, 240, 240);
+}
+
+.habsburg-card > img{
+	max-height: 200px;
+	object-fit: cover;
+	display: block;
+	margin: 0 auto;
+}
+/*
+.habsburg-card:hover{
+	box-shadow:none;
+}
+
 /*align posts*/
 
 .site-main > article:not(:first-of-type){
@@ -1427,7 +1509,7 @@ Media Queries
 		width:25%;
 		display:block;
 		padding: 0;
-		padding-top:2em;
+		padding-top: 2em;
 	}
 
 	.footer-flex-container > nav,

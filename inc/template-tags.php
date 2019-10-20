@@ -7,6 +7,27 @@
  * @package habsburg
  */
 
+if ( ! function_exists( 'habsburg_render_frontpage_cards' ) ) :
+
+	function habsburg_render_frontpage_cards( $partial = null , $id = null ){
+		if ( is_a( $partial, 'WP_Customize_Partial' ) ) {
+			$id                     = $partial->id;
+		}
+		global $post;
+		$setting = get_theme_mod( $id );
+		if ( $setting ){
+			$post = get_post( $setting );
+			setup_postdata( $post );
+			set_query_var( 'card' , $id );
+			
+			get_template_part( 'template-parts/content', 'card' );
+
+			wp_reset_postdata();
+		}
+	}
+
+endif;
+
 if ( ! function_exists( 'habsburg_posted_on' ) ) :
 	/**
 	 * Prints HTML with meta information for the current post-date/time.
