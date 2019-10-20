@@ -40,7 +40,7 @@ if ( is_page_template( 'page-templates/no-sidebar.php' ) ){
 			<?php
 			the_custom_logo();
 			if ( get_post_type() == 'page' && ! is_search() || is_front_page() || is_home() ) : 
-				if ( is_front_page() && is_home() ) :
+				if ( is_front_page() || is_home() ) :
 					?>
 					<h1 class="site-title aligncenter"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 					<?php
