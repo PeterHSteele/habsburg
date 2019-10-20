@@ -28,7 +28,7 @@ function habsburg_customize_register( $wp_customize ) {
 		$wp_customize->add_section( 'habsburg-customizer', array(
 			'title' => __( 'Theme Options' , 'habsburg' ),
 			'priority' => 1000,
-			'active_callback' => 'is_front_page'
+			'active_callback' => 'habsburg_is_featured_content_template'
 		));
 
 		for ( $i = 1; $i <= 3; $i++ ){
@@ -58,6 +58,8 @@ function habsburg_customize_register( $wp_customize ) {
 				'render_callback' => 'habsburg_render_frontpage_cards'
 			));
 		}
+
+
 	}
 
 
@@ -82,7 +84,15 @@ function habsburg_customize_partial_blogdescription() {
 	bloginfo( 'description' );
 }
 
+/**
+ * Used to check whether you can feature content on a given page.
+ *
+ * @return bool 	whether or nor feature content template is being used
+ */
 
+function habsburg_is_featured_content_template(){
+	return is_page_template( array( 'page-templates/featured-content.php' ) );
+}
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.

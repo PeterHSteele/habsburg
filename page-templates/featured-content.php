@@ -1,6 +1,8 @@
 <?php
 /**
- * The template for displaying the front page
+ * Template Name: featured content
+ * The template for displaying the front page ( optional ) or any other page 
+ * you want to feature some content on
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -8,19 +10,16 @@
  */
 
 get_header();
-//if home page is set to display recent posts, load the home template hierarchy
-if ( 'posts' == get_option( 'show_on_front') ){
-	include ( get_home_template() );
-} else {
 ?>
+	<!--display featured posts-->
 	<div id="habsburg-cards" class="habsburg-card-container">
-		<?php 
+		<?php
 		for ( $i = 1; $i <= 3; $i++ ){
 			habsburg_render_frontpage_cards( null, 'card-' . $i );	
 		}
 		?>
 	</div>
-
+	<!--Same as page.php from here on out-->
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
@@ -42,6 +41,6 @@ if ( 'posts' == get_option( 'show_on_front') ){
 	</div><!-- #primary -->
 
 <?php 
-}
+
 get_sidebar();
 get_footer();
