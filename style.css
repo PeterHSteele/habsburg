@@ -1332,6 +1332,10 @@ Front Page
 	border-bottom: 2px solid royalblue;
 }
 
+.habsburg-card p{
+	color: #404040;
+}
+
 .habsburg-card img{
 	max-height: 200px;
 	object-fit: cover;

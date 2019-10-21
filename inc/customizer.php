@@ -11,6 +11,7 @@
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
 function habsburg_customize_register( $wp_customize ) {
+	
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
@@ -85,9 +86,9 @@ function habsburg_customize_partial_blogdescription() {
 }
 
 /**
- * Used to check whether you can feature content on a given page.
+ * Check if featured-content.php is being used.
  *
- * @return bool 	whether or nor feature content template is being used
+ * @return bool 	whether or not featured content template is being used
  */
 
 function habsburg_is_featured_content_template(){
