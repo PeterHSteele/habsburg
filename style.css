@@ -1328,6 +1328,7 @@ Front Page
 	padding: 1em 0;
 	display: flex;
 	align-items:stretch;
+	flex-direction: column;
 	justify-content: center;
 }
 
@@ -1511,6 +1512,11 @@ Media Queries
 ---------------------------*/
 
 
+@media all and (min-width: 500px){
+	.habsburg-card-container{
+		flex-direction: row;
+	}
+}
 
 
 @media all and (min-width: 800px){
