@@ -669,7 +669,7 @@ div.control > button[type="submit"]:hover {
 ## Links
 --------------------------------------------------------------*/
 a {
-	color: black;
+	color: royalblue;
 	text-decoration: none;
 }
 
@@ -1226,6 +1226,7 @@ Layout
 
 .site-content .widget-area{
 	width: 100%;
+	clear: both;
 }
 
 /* no-sidebar layout*/
@@ -1265,6 +1266,15 @@ Layout
 /*---------------------------
 Custom styles
 ----------------------------*/
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a{
+	color: black;
+}
 
 /*---------------------------
 Header
@@ -1325,14 +1335,16 @@ Front Page
 	margin: 0 1.5%;
 	flex: 0 0 30%;
 	position:relative;
-	border-bottom: 2px solid white
+	border-bottom: 2px solid white;
+	padding:1em;
+	box-shadow: 5px 5px 10px 1px rgb(215,215,215);
 }
 
 .habsburg-card:hover{
 	border-bottom: 2px solid royalblue;
 }
 
-.habsburg-card p{
+.habsburg-card:hover p{
 	color: #404040;
 }
 
@@ -1422,16 +1434,24 @@ Front Page
 	padding: .5em 0;
 }
 
+.entry-meta a,
+.entry-footer a,
 .post-navigation a,
 .posts-navigation a{
-	text-decoration: underline;
+	color:black;
+	text-decoration: underline
 }
+
+.entry-meta a:hover,
+.entry-footer a:hover,
+.post-navigation a:hover,
+.posts-navigation a:hover{
+	color:royalblue;
+}
+
+
 
 /*post content*/
-
-.entry-content a{
-	color: royalblue;
-}
 
 .entry-content a:hover{
 	text-decoration: underline;
@@ -1442,7 +1462,7 @@ Sidebar
 ----------------------------*/
 
 aside{
-	padding: 2em .5em 0;
+	padding: 0 .5em 0;/*2em .5em 0*/
 }
 
 aside .widget ul ul{
@@ -1512,8 +1532,8 @@ Media Queries
 		float:right;
 		width:25%;
 		display:block;
-		padding: 0;
-		padding-top: 2em;
+		/*padding-top: 2em;*/
+		clear:none;
 	}
 
 	.footer-flex-container > nav,

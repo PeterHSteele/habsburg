@@ -21,7 +21,18 @@
 	width: 25%;
 }
 
-} 
+}
+
+@media all and (min-width: 940px){
+	.site-main > article,
+	.site-main > .posts-navigation,
+	.site-main > .post-navigation,
+	.site-main > .page-header{
+		margin-left: 10%;
+		margin-right: 20%;
+	}
+}
+
 .site-footer {
 	clear: both;
 	width: 100%;
